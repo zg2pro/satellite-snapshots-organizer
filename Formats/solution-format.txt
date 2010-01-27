@@ -1,0 +1,33 @@
+Solution description format
+----------------------------------------------------------------------
+BNF-like formalism
+A symbol followed by "*" indicates any number of occurrences of this
+symbol 
+"|" between two symbols indicates a possible choice between both these
+symbols
+"//" introduces comments
+----------------------------------------------------------------------
+
+solution ::= solution-information acquisition-number acquisitions
+end-of-file 
+
+solution-information ::= data-set-number grid-number track-number
+end-of-line
+data-set-number ::= integer
+grid-number ::= integer
+track-number ::= integer
+// the name of the associated file is 
+// solution_data-set-number_grid-number_track-number
+
+acquisition-number ::= integer end-of-line
+// Na = acquisition-number
+
+acquisitions ::= acquisition*
+
+acquisition ::= strip-index acquisition-direction end-of-line 
+strip-index ::= integer
+acquisition-index ::= 0|1
+// Stra[k] = strip-index
+// Dira[k] = acquisition-direction (0 for an acquisition from end0 to end1
+// and 1 for an acquisition from end1 to end0)
+

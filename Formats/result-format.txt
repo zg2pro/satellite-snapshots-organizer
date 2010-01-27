@@ -1,0 +1,18 @@
+Result description format
+----------------------------------------------------------------------
+BNF-like formalism
+"//" introduces comments
+----------------------------------------------------------------------
+
+result ::= result-information gain end-of-file 
+
+result-information ::= data-set-number grid-number track-number
+end-of-line
+data-set-number ::= integer
+grid-number ::= integer
+track-number ::= integer
+// the name of the associated file is 
+// result_data-set-number_grid-number_track-number
+
+gain ::= float end-of-line
+// G = gain

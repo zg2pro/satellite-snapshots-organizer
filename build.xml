@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="Projet_IA_M6" default="dist" basedir=".">
+	<description>Ant Script for project</description>
+  <property name="src" location="src"/>   
+  <property name="bin" location="bin"/>
+  <property name="dist"  location="dist"/> 
+  <property name="doc"  location="doc"/>   
+  <property name="lib"  location="lib"/>  
+
+  <target name="init">
+    <tstamp/>
+    <mkdir dir="${bin}"/>
+    <mkdir dir="${doc}"/>
+    <mkdir dir="${lib}"/>
+  </target>
+
+  <target name="compile" depends="init"
+    description="compilation of sources " >
+  	   <javac srcdir="${src}" destdir="${bin}">
+  	<classpath>
+  	      <fileset dir="${lib}">
+  	       <include name="*"/>
+  	      </fileset>
+  	     </classpath>
+    	</javac>
+  </target>
+
+  <target name="dist" depends="compile"
+        description="generating archive" >
+    <mkdir dir="${dist}"/> 
+    <jar jarfile="${dist}/IA-${DSTAMP}.jar" basedir="${bin}">  
+  	</jar>
+</target>
+ 
+  <target name="javadoc" depends="init"
+  	description="generating java documentation " >
+	 	
+	 	<javadoc destdir="${doc}" 
+	 		author="true" 
+	 		version="true" 
+	 		use="true" 
+	 		windowtitle="Ordonnancement de prises de vue satellitaires"
+	 		doctitle="Ordonnancement de prises de vue satellitaires"
+	 		bottom="Copyright © 2007 - Gregory ANNE, Yoann JANSZEN">
+	    <fileset dir="${src}" defaultexcludes="yes">
+	      <include name="*" />
+	    </fileset>
+	    <link href="http://developer.java.sun.com/developer/products/xml/docs/api/"/>
+	  </javadoc>
+
+	</target>
+
+
+	<target name="runAll" depends="dist" description="Launching program">
+    <java classname="Reader" fork="true">
+   		 <classpath>  
+   		<fileset dir="${dist}">
+            <include name="IA-${DSTAMP}.jar"/>
+           </fileset>
+     		  <fileset dir="${lib}">
+     		         <include name="*"/>
+     		        </fileset>    
+     </classpath>
+    </java> 
+  </target>
+
+	<target name="run2_9_36" depends="dist" description="Launching program">
+    <java classname="Reader" fork="true">
+    	<arg value="2_9_36"/>
+   		 <classpath>  
+   		<fileset dir="${dist}">
+            <include name="IA-${DSTAMP}.jar"/>
+           </fileset>
+     		  <fileset dir="${lib}">
+     		         <include name="*"/>
+     		        </fileset>    
+     </classpath> 
+    </java> 
+  </target>
+
+	<target name="run2_9_66" depends="dist" description="Launching program">
+    <java classname="Reader" fork="true">
+    	<arg value="2_9_66"/>
+   		 <classpath>  
+   		<fileset dir="${dist}">
+            <include name="IA-${DSTAMP}.jar"/>
+           </fileset>
+     		  <fileset dir="${lib}">
+     		         <include name="*"/>
+     		        </fileset>    
+     </classpath> 
+    </java> 
+  </target>
+	<target name="run2_9_170" depends="dist" description="Launching program">
+    <java classname="Reader" fork="true">
+    	<arg value="2_9_170"/>
+   		 <classpath>  
+   		<fileset dir="${dist}">
+            <include name="IA-${DSTAMP}.jar"/>
+           </fileset>
+     		  <fileset dir="${lib}">
+     		         <include name="*"/>
+     		        </fileset>    
+     </classpath> 
+    </java> 
+  </target>
+	<target name="run3_8_155" depends="dist" description="Launching program">
+    <java classname="Reader" fork="true">
+    	<arg value="3_8_155"/>
+   		 <classpath>  
+   		<fileset dir="${dist}">
+            <include name="IA-${DSTAMP}.jar"/>
+           </fileset>
+     		  <fileset dir="${lib}">
+     		         <include name="*"/>
+     		        </fileset>    
+     </classpath> 
+    </java> 
+  </target>
+	<target name="run2_13_111" depends="dist" description="Launching program">
+    <java classname="Reader" fork="true">
+    	<arg value="2_13_111"/>
+   		 <classpath>  
+   		<fileset dir="${dist}">
+            <include name="IA-${DSTAMP}.jar"/>
+           </fileset>
+     		  <fileset dir="${lib}">
+     		         <include name="*"/>
+     		        </fileset>    
+     </classpath> 
+    </java> 
+  </target>
+	<target name="run2_15_170" depends="dist" description="Launching program">
+    <java classname="Reader" fork="true">
+    	<arg value="2_15_170"/>
+   		 <classpath>  
+   		<fileset dir="${dist}">
+            <include name="IA-${DSTAMP}.jar"/>
+           </fileset>
+     		  <fileset dir="${lib}">
+     		         <include name="*"/>
+     		        </fileset>    
+     </classpath> 
+    </java> 
+  </target>
+	<target name="run2_26_96" depends="dist" description="Launching program">
+    <java classname="Reader" fork="true">
+    	<arg value="2_26_96"/>
+   		 <classpath>  
+   		<fileset dir="${dist}">
+            <include name="IA-${DSTAMP}.jar"/>
+           </fileset>
+     		  <fileset dir="${lib}">
+     		         <include name="*"/>
+     		        </fileset>    
+     </classpath> 
+    </java> 
+  </target>
+	<target name="run2_27_22" depends="dist" description="Launching program">
+    <java classname="Reader" fork="true">
+    	<arg value="2_27_22"/>
+   		 <classpath>  
+   		<fileset dir="${dist}">
+            <include name="IA-${DSTAMP}.jar"/>
+           </fileset>
+     		  <fileset dir="${lib}">
+     		         <include name="*"/>
+     		        </fileset>    
+     </classpath> 
+    </java> 
+  </target>
+	<target name="run3_25_22" depends="dist" description="Launching program">
+    <java classname="Reader" fork="true">
+    	<arg value="3_25_22"/>
+   		 <classpath>  
+   		<fileset dir="${dist}">
+            <include name="IA-${DSTAMP}.jar"/>
+           </fileset>
+     		  <fileset dir="${lib}">
+     		         <include name="*"/>
+     		        </fileset>    
+     </classpath> 
+    </java> 
+  </target>
+	<target name="run4_17_186" depends="dist" description="Launching program">
+    <java classname="Reader" fork="true">
+    	<arg value="4_17_186"/>
+   		 <classpath>  
+   		<fileset dir="${dist}">
+            <include name="IA-${DSTAMP}.jar"/>
+           </fileset>
+     		  <fileset dir="${lib}">
+     		         <include name="*"/>
+     		        </fileset>    
+     </classpath> 
+    </java> 
+  </target>
+	
+
+		
+  <target name="clean"  description="removing old files" >
+    <delete dir="${bin}"/>
+    <delete dir="${dist}"/>
+    <delete dir="${doc}"/>
+  </target>
+</project>

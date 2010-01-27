@@ -1,0 +1,15 @@
+Example illustrating the result format
+File "result_2_9_36"
+"//" introduces comments
+----------------------------------------
+
+2 9 36
+10423
+
+// The data set number equals 2
+// The grid number equals 9
+// The track number equals 36
+// The filename is result_2_9_36
+
+// The total gain equals 10423
+// G = 10423
