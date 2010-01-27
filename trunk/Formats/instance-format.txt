@@ -1,0 +1,92 @@
+Instance description format
+----------------------------------------------------------------------
+BNF-like formalism
+A symbol followed by "*" indicates any number of occurrences of this
+symbol 
+"|" between two symbols indicates a possible choice between both these
+symbols
+"//" introduces comments
+----------------------------------------------------------------------
+
+instance ::= instance-information request-strip-numbers
+solution-information requests strips end-of-file
+
+instance-information ::= data-set-number grid-number track-number
+to-be-ignored to-be-ignored end-of-line
+data-set-number ::= integer
+grid-number ::= integer
+track-number ::= integer
+// the name of the associated file is 
+// instance_data-set-number_grid-number_track-number
+
+request-strip-numbers ::= request-number strip-number end-of-line
+request-number ::= integer
+strip-number ::= integer
+// Nr = request-number
+// Ns = strip-number
+// Npa = 2.Nb
+
+solution-information ::= to-be-ignored to-be-ignored to-be-ignored
+end-of-line
+
+requests ::= request*
+
+strips ::= strip*
+
+request ::= request-index request-gain request-surface request-type
+request-stereo end-of-line 
+request-index ::= integer
+request-gain ::= integer
+request-surface ::= float
+request-type ::= 0|2
+request-stereo ::= 0|1
+// i = request-index
+// G[i] = request-gain (unit gain)
+// S[i] = request-surface (in square kilometers)
+// T[i] = request-type (0 for a target, 2 for a polygon)
+// St[i] = request-stereo (0 for a mono request, 1 for a stereo request)
+
+strip ::= index-information selection-information strip-information
+end0-information end1-information
+
+index-information ::= strip-index associated-request-index to-be-ignored
+twin-strip-index  end-of-line
+strip-index ::= integer
+associated-request-index ::= integer
+twin-strip-index ::= integer
+// j = strip-index
+// R[j] = associated-request-index
+// Tw[j] = twin-strip-index (0 when St[D[j]] = 0 (associated mono request))
+
+selection-information ::= to-be-ignored to-be-ignored end-of-line
+
+strip-information ::= strip-useful-surface strip-acquisition-duration
+end-of-line 
+strip-useful-surface ::= float 
+strip-acquisition-duration ::= float
+// Su[j] = strip-useful-surface (in square kilometers)
+// Du[j] = strip-acquisition-duration (in seconds)
+
+end0-information ::= end0-x-coordinate end0-y-coordinate
+end0-earliest-visibility end0-latest-visibility end-of-line
+end0-x-coordinate ::= integer
+end0-y-coordinate ::=  integer
+end0-earliest-visibility ::=  float
+end0-latest-visibility ::=  float
+// X[j,0] = end0-x-coordinate (in meters)
+// Y[j,0] = end0-y-coordinate (in meters)
+// Te[j,0] = end0-earliest-visibility (in seconds)
+// Tl[j,0] = end0-latest-visibility (in seconds)
+
+end1-information ::= end1-x-coordinate end1-y-coordinate
+end1-earliest-visibility end1-latest-visibility end-of-line
+end1-x-coordinate ::= integer
+end1-y-coordinate ::=  integer
+end1-earliest-visibility ::=  float
+end1-latest-visibility ::=  float
+// X[j,1] = end1-x-coordinate (in meters)
+// Y[j,1] = end1-y-coordinate (in meters)
+// Te[j,1] = end1-earliest-visibility (in seconds)
+// Tl[j,1] = end1-latest-visibility (in seconds)
+
+

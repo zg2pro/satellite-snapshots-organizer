@@ -1,0 +1,89 @@
+Example illustrating the instance format
+File "instance_2_9_36"
+"//" introduces comments
+----------------------------------------
+
+2 9 36 180 23510 
+2 2
+0 0 0
+2215 40000 130.293 0 0
+2216 40000 130.293 0 0
+1 2215 0 0
+0 0
+130.293 3.77
+-4456037 -88775 765.83 872.71
+-4443530 -91853 767.74 874.41
+2 2216 0 0
+0 0
+130.293 3.77
+-4405252 -12057 771.67 881.53
+-4392714 -15006 773.50 883.33
+
+// The data set number equals 2
+// The grid number equals 9
+// The track number equals 36
+// The filename is instance_2_9_36
+
+// The request number equals 2
+// Only two candidate requests
+// Nr = 2
+// The strip number equals 2,
+// one for each request
+// Only two candidate strips
+// Ns = 2
+// Four candidate strip acquisitions,
+// one for each strip and each acquisition direction
+// Npa = 4
+
+// The index of the first request equals 2215
+// The associated unit gain (per square kilometer) equals 40000;
+// G[2215] = 40000
+// The associated surface equals 130.293 square kilometers
+// S[2215] = 130.293
+// This request is related to a target
+// T[2215] = 0
+// This request is mono
+// St[2215] = 0
+
+// The index of the second request equals 2216
+// Its attributes are the same as those of the previous request
+
+// The index of the first strip equals 1
+// The index of the associated request equals 2215
+// R[1] = 2215
+// Because the associated request is mono, there is no twin strip
+// Tw[1] = 0
+
+// The useful surface of this strip equals 130.293 square kilometers,
+// the same as the surface of the request
+// Su[1] = 130.293
+// The duration of the acquisition of this strip equals 3.77 seconds
+// Du[1] = 3.77
+
+// The x-coordinate of the first end of this strip equals -4405252 meters
+// X[1,0] = -4405252
+// The y-coordinate of the first end of this strip equals -88775 meters
+// X[1,0] = -88775 
+// The earliest date of visibility of the first end of this strip
+// equals 765.83 seconds
+// Te[1,0] = 765.83
+// The latest date of visibility of the first end of this strip
+// equals 872.71 seconds
+// Tl[1,0] = 872.71
+
+// The x-coordinate of the second end of this strip equals -4443530 meters
+// X[1,1] = -4443530
+// The y-coordinate of the second end of this strip equals -91853 meters
+// X[1,1] = -91853 
+// The earliest date of visibility of the second end of this strip
+// equals 767.74 seconds
+// Te[1,1] = 767.74
+// The latest date of visibility of the second end of this strip
+// equals 874.41 seconds
+// Tl[1,1] = 874.41
+
+// The index of the second strip equals 2
+// The index of the associated request equals 2216
+// R[2] = 2216
+// Because the associated request is mono, there is no twin strip
+// Tw[2] = 0 ...

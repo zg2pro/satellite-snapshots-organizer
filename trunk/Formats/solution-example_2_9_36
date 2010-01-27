@@ -1,0 +1,31 @@
+Example illustrating the solution format
+File "solution_2_9_36"
+"//" introduces comments
+----------------------------------------
+
+2 9 36
+2
+1 0
+2 0
+
+// The data set number equals 2
+// The grid number equals 9
+// The track number equals 36
+// The filename is solution_2_9_36
+
+// The number of strip acquisitions equals 2
+// Only two acquired strips
+// Na = 2
+
+// The index of the first strip acquisition equals 1
+// Stra[1] = 1
+// The direction of acquisition equals 0
+// from end0 to end1
+// Dira[1] = 0
+
+// The index of the second strip acquisition equals 2
+// Stra[2] = 2
+// The direction of acquisition equals 0
+// from end0 to end1
+// Dira[2] = 0
+
